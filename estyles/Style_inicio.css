@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+/* Estilos para el contenedor principal super puesto a el resto*/
+
+.section_inicio { /* Estilo para la sección inicial. */
+    transition: opacity 0.5s ease, height 0.5s ease;
+    opacity: 1;
+    position: fixed; /* Fija la posición de la sección en la pantalla. */
+    top: 0; /* Coloca la sección en la parte superior. */
+    left: 0; /* Coloca la sección en el lado izquierdo. */
+    width: 100vw; /* Ancho completo de la ventana. */
+    height: 100vh; /* Alto completo de la ventana. */
+    background-color: black; /* Fondo negro. */
+    color: white; /* Color del texto blanco. */
+    z-index: 150; /* Asegura que esta sección esté por encima de otras. */
+    overflow: hidden;
+}
+
+.ocult_section_inicio{
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+nav { /* Estilo para el elemento de navegación. */
+    width: 100%; /* Ancho completo. */
+    height: 10vh; /* Altura del 10% de la ventana. */
+    position: sticky; /* Mantiene el nav en la parte superior al hacer scroll. */
+}
+
+.nav-container { /* Contenedor para los elementos de navegación. */
+    width: 100%; /* Ancho completo. */
+    height: 100%; /* Altura completa. */
+    display: flex; /* Usa flexbox para alinear los hijos. */
+    justify-content: space-around; /* Espacia los elementos uniformemente. */
+    align-items: center; /* Centra los elementos verticalmente. */
+}
+
+.logo { /* Estilo para el logo. */
+    color: white; /* Color del logo blanco. */
+    font-size: 2rem; /* Tamaño de fuente grande. */
+    font-weight: bold; /* Fuente en negrita. */
+}
+
+.logo span { /* Estilo para el span dentro del logo. */
+    color: #077b32; /* Color verde específico. */
+    text-shadow: 0 0 10px #077b32; /* Sombra del texto para un efecto luminoso. */
+}
+
+.hamburg, .cancel { /* Estilos para los íconos de menú hamburguesa y cancelar. */
+    cursor: pointer; /* Cambia el cursor al pasar sobre ellos. */
+    position: absolute; /* Posición absoluta dentro de su contenedor. */
+    right: 15px; /* Espaciado desde el lado derecho. */
+    top: 10px; /* Espaciado desde la parte superior. */
+    color: white; /* Color blanco. */
+    display: none; /* Oculto por defecto. */
+    font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem); /* Tamaño de fuente adaptable. */
+}
+
+
+.nav-container .links { /* Contenedor para los enlaces de navegación. */
+    display: flex; /* Usa flexbox para alinear los enlaces. */
+}
+
+.nav-container .links a { /* Estilo para los enlaces dentro de la navegación. */
+    position: relative; /* Posición relativa para efectos pseudo-elementos. */
+    font-size: 1.2rem; /* Tamaño de fuente. */
+    color: white; /* Color del texto blanco. */
+    margin: 0 20px; /* Margen horizontal entre enlaces. */
+    text-decoration: none; /* Sin subrayado. */
+    font-weight: 550; /* Peso de fuente. */
+    transition: 0.3s linear; /* Transición suave para cambios. */
+}
+
+.nav-container .links a::before { /* Estilo para el efecto de línea debajo de los enlaces. */
+    position: absolute; /* Posición absoluta respecto al enlace. */
+    content: ""; /* Necesario para mostrar el pseudo-elemento. */
+    bottom: -3px; /* Posición 3px debajo del enlace. */
+    left: 0; /* Comienza en el lado izquierdo. */
+    width: 0%; /* Ancho inicial del efecto. */
+    height: 3px; /* Altura de la línea. */
+    background-color: #077b32; /* Color verde. */
+    transition: 0.2s linear; /* Transición suave al expandirse. */
+}
+
+.nav-container .links a:hover::before { /* Efecto al pasar el mouse sobre un enlace. */
+    width: 100%; /* Expande el ancho al 100%. */
+}
+
+.nav-container .links a:hover { /* Cambia el color del enlace al pasar el mouse. */
+    color: #077b32; /* Color verde al pasar el mouse. */
+}
+
+.dropdown { /* Estilo para el menú desplegable. */
+    z-index: 100; /* Por encima de otros elementos, pero debajo de la sección fija. */
+    position: absolute; /* Posición absoluta. */
+    top: 0; /* Alineado al tope del contenedor. */
+    transform: translateY(-500px); /* Inicialmente fuera de vista. */
+    width: 100%; /* Ancho completo. */
+    height: auto; /* Altura automática. */
+    backdrop-filter: blur(4px) brightness(40%); /* Efecto de desenfoque y brillo. */
+    box-shadow: 0 0 20px black; /* Sombra alrededor del menú. */
+    transition: 0.2s linear; /* Transición suave para la aparición. */
+}
+
+.dropdown .links a { /* Estilo para los enlaces dentro del menú desplegable. */
+    display: flex; /* Usa flexbox para alinear el texto. */
+    color: white; /* Color blanco. */
+    text-decoration: none; /* Sin subrayado. */
+    justify-content: center; /* Centra el texto horizontalmente. */
+    padding: 15px 0; /* Espaciado vertical. */
+    align-items: center; /* Centra el texto verticalmente. */
+    transition: 0.2s linear; /* Transición suave al pasar el mouse. */
+}
+
+.dropdown .links a:hover { /* Efecto al pasar el mouse sobre un enlace del menú. */
+    background-color: #077b32; /* Cambia el fondo a verde al pasar el mouse. */
+}
+
+section { /* Estilo para secciones generales. */
+    width: 100%; /* Ancho completo. */
+    height: 90vh; /* Altura del 90% de la ventana. */
+}
+
+.main-container { /* Contenedor principal para el contenido. */
+    width: 100%; /* Ancho completo. */
+    height: 100%; /* Altura completa. */
+    display: flex; /* Usa flexbox para alinear elementos. */
+    justify-content: space-evenly; /* Espaciado uniforme entre los elementos. */
+    align-items: center; /* Centra verticalmente los elementos. */
+}
+
+.main-container .image { /* Estilo para la imagen en el contenedor principal. */
+    width: 450px; /* Ancho fijo. */
+    height: 80vh; /* Altura del 80% de la ventana. */
+    border-radius: 20%; /* Bordes redondeados. */
+    overflow: hidden; /* Oculta el desbordamiento. */
+    box-shadow: 0 0 50px #077b32; /* Sombra alrededor de la imagen. */
+}
+
+.main-container .image img { /* Estilo para la imagen dentro del contenedor de imagen. */
+    width: 100%; /* Ancho completo del contenedor. */
+}
+
+.main-container .image:hover { /* Efecto al pasar el mouse sobre la imagen. */
+    animation: animate 1.5s ease-in-out infinite; /* Anima la imagen en un bucle. */
+}
+
+@keyframes animate { /* Define la animación para el efecto de escala. */
+    0% { scale: 1; } /* Escala original. */
+    50% { scale: 1.05; } /* Escala al 105% en el punto medio. */
+    100% { scale: 1; } /* Regresa a la escala original. */
+}
+
+.main-container .content { /* Estilo para el contenido en el contenedor principal. */
+    color: white; /* Color del texto blanco. */
+    width: 40%; /* Ancho del 40%. */
+    min-height: 100px; /* Altura mínima. */
+}
+
+.content h1 { /* Estilo para el encabezado principal. */
+    font-size: clamp(1rem, 1rem + 5vw, 1.8rem); /* Tamaño de fuente adaptable. */
+}
+
+.content h1 span { /* Estilo para el span dentro del encabezado. */
+    color: #077b32; /* Color verde. */
+    text-shadow: 0 0 10px #077b32; /* Sombra para un efecto luminoso. */
+}
+
+.content .typewriter { /* Estilo para el texto tipo máquina de escribir. */
+    font-size: clamp(1rem, 1rem + 5vw, 2.5rem); /* Tamaño de fuente adaptable. */
+    font-weight: 600; /* Peso de fuente seminegrita. */
+}
+
+.content .typewriter-text { /* Estilo para el texto de la máquina de escribir. */
+    color: #077b32; /* Color verde. */
+    text-shadow: 0 0 10px #077b32; /* Sombra para un efecto luminoso. */
+}
+
+.content p { /* Estilo para los párrafos dentro del contenido. */
+    font-size: clamp(0.4rem, 0.2rem + 9vw, 1rem); /* Tamaño de fuente adaptable. */
+    margin: 10px 0; /* Margen vertical entre párrafos. */
+    text-align: justify;
+}
+
+.social-links i { /* Estilo para los íconos sociales. */
+    display: inline-flex; /* Alineación flexible en línea. */
+    justify-content: center; /* Centra el icono horizontalmente. */
+    align-items: center; /* Centra el icono verticalmente. */
+    width: 3rem; /* Ancho fijo. */
+    height: 3rem; /* Altura fija. */
+    background-color: transparent; /* Fondo transparente. */
+    border: 0.2rem solid #077b32; /* Borde verde. */
+    border-radius: 50%; /* Bordes redondeados. */
+    color: #077b32; /* Color verde. */
+    margin: 5px 15px; /* Espaciado alrededor de los íconos. */
+    font-size: 1.5rem; /* Tamaño de fuente para los íconos. */
+    transition: 0.2s linear; /* Transición suave al interactuar. */
+}
+
+.social-links i:hover { /* Efecto al pasar el mouse sobre los íconos sociales. */
+    scale: 1.3; /* Aumenta el tamaño del icono. */
+    color: black; /* Cambia el color a negro. */
+    background-color: #077b32; /* Cambia el fondo a verde. */
+    filter: drop-shadow(0 0 10px #077b32); /* Añade sombra al icono. */
+}
+
+.content button { /* Estilo para los botones dentro del contenido. */
+    width: 50%; /* Ancho del 50%. */
+    height: 6vh; /* Altura del 6% de la ventana. */
+    margin: 30px; /* Margen alrededor del botón. */
+    background-color: #077b32; /* Fondo verde. */
+    color: white; /* Texto blanco. */
+    border: none; /* Sin borde. */
+    outline: none; /* Sin contorno. */
+    font-size: 120%; /* Tamaño de fuente más grande. */
+    font-weight: 700; /* Peso de fuente negrita. */
+    border-radius: 5px; /* Bordes redondeados. */
+    transition: 0.2s linear; /* Transición suave al interactuar. */
+}
+
+
+.content button:hover { /* Efecto al pasar el mouse sobre el botón. */
+    scale: 1.1; /* Aumenta el tamaño del botón. */
+    color: #077b32; /* Cambia el color del texto a verde. */
+    border: 2px solid #077b32; /* Añade borde verde. */
+    background-color: transparent; /* Cambia el fondo a transparente. */
+    font-weight: 700; /* Mantiene el peso de fuente negrita. */
+    box-shadow: 0 0 40px #077b32; /* Añade sombra alrededor del botón. */
+}
+
+@media (max-width:884px) { /* Estilos para pantallas con un ancho máximo de 884px. */
+    nav .logo { /* Ajustes para el logo en navegación. */
+        position: absolute; /* Posición absoluta. */
+        top: 16px; /* Espaciado desde la parte superior. */
+        left: 15px; /* Espaciado desde el lado izquierdo. */
+        font-size: 1.5rem; /* Tamaño de fuente más pequeño. */
+    }
+
+    .main-container { /* Ajustes para el contenedor principal. */
+        display: flex; /* Usa flexbox. */
+        flex-direction: column; /* Cambia la dirección a columna. */
+    }
+
+    .nav-container .links { /* Oculta los enlaces en navegación. */
+        display: none; /* No mostrar los enlaces. */
+    }
+
+    .hamburg, .cancel { /* Muestra los íconos de menú. */
+        display: block; /* Muestra los íconos. */
+    }
+
+    .main-container .content { /* Ajustes para el contenido. */
+        width: 80%; /* Ancho más amplio. */
+    }
+
+    .social-links i { /* Ajustes para los íconos sociales. */
+        width: 2.5rem; /* Ancho más pequeño. */
+        height: 2.5rem; /* Altura más pequeña. */
+        font-size: 1.5rem; /* Mantiene el tamaño de fuente. */
+    }
+
+    .main-container .image { /* Ajustes para la imagen en contenedor principal. */
+        z-index: -1; /* Coloca la imagen detrás. */
+        width: 50%; /* Ancho reducido. */
+        height: 60%; /* Altura reducida. */
+    }
+}
+
+@media (max-width:440px) { /* Estilos para pantallas con un ancho máximo de 440px. */
+    .main-container .image { /* Ajustes para la imagen. */
+        width: 50%; /* Ancho reducido. */
+        height: 60%; /* Altura reducida. */
+        margin-bottom: 0px; /* Sin margen inferior. */
+    }
+
+    .main-container .content { /* Ajustes para el contenido. */
+        width: 80%; /* Ancho más amplio. */
+    }
+
+    .main-container button { /* Ajustes para los botones en el contenedor principal. */
+        margin-top: 15px; /* Margen superior en botones. */
+    }
+}
